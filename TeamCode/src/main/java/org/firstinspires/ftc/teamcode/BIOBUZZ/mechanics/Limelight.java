@@ -21,7 +21,7 @@ public class Limelight {
     public double[] getResult() {
         llresult = limelight.getLatestResult();
         double[] results = new double[3];
-        if(llresult != null & llresult.isValid()) {
+        if(llresult != null && llresult.isValid()) {
             results[0] = llresult.getTx();
             results[1] = llresult.getTy();
             results[2] = llresult.getTa();

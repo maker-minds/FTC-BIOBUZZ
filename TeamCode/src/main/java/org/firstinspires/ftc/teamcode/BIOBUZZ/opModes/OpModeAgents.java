@@ -4,11 +4,14 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import org.firstinspires.ftc.teamcode.BIOBUZZ.mechanics.DriveTrain;
+import org.firstinspires.ftc.teamcode.BIOBUZZ.mechanics.Intake;
+
 @TeleOp(name = "OpMode_Agents", group = "BIOBUZZ")
 public class OpModeAgents extends OpMode {
 
     //---Systems---\\
-    DriveTrain drivetrain = new DriveTrain();
+    private DriveTrain drivetrain = new DriveTrain();
+    private Intake intake = new Intake();
 
     //---Constants---\\
     private enum Modi {
@@ -17,13 +20,16 @@ public class OpModeAgents extends OpMode {
     }
 
     //---Variables---\\
-    Modi modus = Modi.INPUT;
+    private Modi modus = Modi.INPUT;
+    public static byte storedItems = 0;
 
+    //---Functions---\\
     @Override
     public void init() {
         drivetrain.init(hardwareMap);
         drivetrain.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         drivetrain.setZeroPowerBehaviour(DcMotor.ZeroPowerBehavior.FLOAT);
+        intake.init(hardwareMap);
     }
 
     @Override
@@ -41,9 +47,9 @@ public class OpModeAgents extends OpMode {
         getSensoryInput();
         drive();
         if(modus == Modi.INPUT) {
-
+            intake.activate();
         } else if(modus == Modi.OUTPUT) {
-
+            intake.deactivate();
         }
     }
 

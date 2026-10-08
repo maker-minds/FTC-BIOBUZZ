@@ -7,10 +7,11 @@ import com.qualcomm.robotcore.hardware.Servo;
 public class Outtake {
 
     //---Objects---\\
-    DcMotorEx flywheel = null;
-    Servo turret = null;
-    Servo ramp = null;
+    private DcMotorEx flywheel = null;
+    private Servo turret = null;
+    private Servo ramp = null;
 
+    //---Functions---\\
     public void init(HardwareMap hardwareMap) {
         flywheel = hardwareMap.get(DcMotorEx.class, "flywheel");
         turret = hardwareMap.get(Servo.class, "turret");

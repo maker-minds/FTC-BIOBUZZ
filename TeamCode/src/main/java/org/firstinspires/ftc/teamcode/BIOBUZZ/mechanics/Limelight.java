@@ -19,6 +19,7 @@ public class Limelight {
     private Telemetry telemetry;
     RevHubOrientationOnRobot revHubOrientationOnRobot;
 
+    //---Functions---\\
     public void init(HardwareMap hardwareMap) {
         limelight = hardwareMap.get(Limelight3A.class, "limelight");
         imu = hardwareMap.get(IMU.class, "imu");

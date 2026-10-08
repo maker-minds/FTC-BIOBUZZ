@@ -15,6 +15,7 @@ public class DriveTrain {
     public DcMotorEx leftBack = null;
     public DcMotorEx rightBack = null;
 
+    //---Functions---\\
     public void init(HardwareMap hardwareMap) {
         leftFront = hardwareMap.get(DcMotorEx.class, "leftFront");
         rightFront = hardwareMap.get(DcMotorEx.class, "rightFront");

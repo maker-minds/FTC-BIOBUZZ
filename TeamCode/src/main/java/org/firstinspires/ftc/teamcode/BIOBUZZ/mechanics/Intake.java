@@ -39,11 +39,13 @@ public class Intake {
         double distance = gate.getDistance(DistanceUnit.MM);
         if (distance > 65) {
             lastScan = false;
+            threadmill.setPower(0);
             return;
         }
         if (!lastScan) {
             OpModeAgents.storedItems++;
             lastScan = true;
+            threadmill.setPower(1);
         }
         if(OpModeAgents.storedItems == 4) {
             deactivate();

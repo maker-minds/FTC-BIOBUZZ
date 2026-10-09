@@ -17,4 +17,8 @@ public class Outtake {
         turret = hardwareMap.get(Servo.class, "turret");
         ramp = hardwareMap.get(Servo.class, "ramp");
     }
+
+    public void shoot() {
+            
+    }
 }

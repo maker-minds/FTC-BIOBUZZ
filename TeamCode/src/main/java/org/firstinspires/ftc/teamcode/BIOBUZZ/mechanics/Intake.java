@@ -47,8 +47,5 @@ public class Intake {
             lastScan = true;
             threadmill.setPower(1);
         }
-        if(OpModeAgents.storedItems == 4) {
-            deactivate();
-        }
     }
 }

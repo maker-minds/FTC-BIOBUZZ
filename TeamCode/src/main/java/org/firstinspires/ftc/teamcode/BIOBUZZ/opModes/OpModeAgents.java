@@ -54,7 +54,7 @@ public class OpModeAgents extends OpMode {
 
 	private void drive() {
 		double drive, turn, drift;
-		drive = gamepad1.left_stick_y;
+		drive = -gamepad1.left_stick_y;
 		turn = gamepad1.right_stick_x;
 		drift = gamepad1.left_stick_x;
 		double leftfront = drive + turn + drift;

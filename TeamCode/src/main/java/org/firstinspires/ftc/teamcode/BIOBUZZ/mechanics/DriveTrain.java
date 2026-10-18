@@ -57,9 +57,9 @@ public class DriveTrain {
     }
 
     public void setPower(double leftfront, double rightfront, double leftback, double rightback) {
-        leftFront.setPower(Range.clip(leftfront, -1, 1));
-        rightFront.setPower(Range.clip(rightfront, -1 , 1));
-        leftBack.setPower(Range.clip(leftback, -1, 1));
-        rightBack.setPower(Range.clip(rightback, -1, 1));
+        leftFront.setPower(Range.clip(leftfront, -0.6, 0.6));
+        rightFront.setPower(Range.clip(rightfront, -0.6 , 0.6));
+        leftBack.setPower(Range.clip(leftback, -0.6, 0.6));
+        rightBack.setPower(Range.clip(rightback, -0.6, 0.6));
     }
 }
